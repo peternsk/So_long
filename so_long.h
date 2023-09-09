@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/07 10:36:21 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/08 23:53:11 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,30 @@ typedef struct s_game_map
 	int		way_out;
 	int		height;
 	int		lenght;
+	int		indx;
 	
 }			t_game_map;
 
-t_game_map	*create_game_map(char **map)
+t_game_map	*create_game_map(char *file_path)
 {
 	t_game_map	*game_map;
 
 	game_map = malloc(1 * sizeof(t_game_map));
 	if (!game_map)
 		return (NULL);
-	game_map->map = map;
+	game_map->map = 0;
 	game_map->collect = 0;
 	game_map->player = 0;
 	game_map->way_out = 0;
 	game_map->height = 0;
 	game_map->lenght = 0;
+	game_map->indx = 0;
 	return (game_map);
 }
 
-void	ft_check_line_char(char *line);
-void		test__ft_check_file_ext(char *map_file, char *req_ext);
-
+t_game_map	*create_game_map(char *file_path);
+void		ft_check_line_char(char *line, int indx, int player, int collectible, int way_out);
+void		ft_check_file_ext(char *map_file, char *req_ext);
+int			ft_count_line(char *file_path);
 
 #endif
