@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/17 15:12:42 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/17 16:43:00 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef	struct s_flood_maze
 t_game_map	*create_game_map(char *file_path);
 t_flood_maze *create_flood_maze(t_game_map *g_game_map);
 
-void		ft_check_file_ext(char *map_file, char *req_ext);
+void		ft_check_line_char(char *line, int indx, t_game_map *g_game_map);
 void		ft_map_to_arr(t_game_map *g_game_map);
 void		ft_check_line_char(char *line, int indx, t_game_map *g_game_map);
 int			ft_count_line(char *file_path);

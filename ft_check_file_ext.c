@@ -6,15 +6,10 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:19:21 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/12 15:43:15 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/17 15:33:23 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "so_long.h"
 
 /* the goal of this function is to compare the extention on the given file to the require 
@@ -68,14 +63,4 @@ void		test__ft_check_file_ext(char *map_file, char *req_ext)
 			ft_exiting_prog(1, "wrong file extension...");
 	}
 	
-}
-
-int main(void)
-{
-	char *map = "hello.bee";
-	char *ext = ".ber";
-
-	test__ft_check_file_ext(map, ext);
-
-	return(0);
 }

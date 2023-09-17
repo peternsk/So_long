@@ -9,8 +9,8 @@ INC_DIR = include
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-PARSING = main ft_check_file_ext ft_check_line_char ft_check_mando_char ft_is_map_close ft_is_map_rect ft_is_path_valid
-UTILS = ft_arr_cpy ft_count_line ft_map_to_arr ft_p_position struct
+PARSING = srcs/ft_check_file_ext ft_check_line_char ft_check_mando_char ft_is_map_close ft_is_map_rect ft_is_path_valid
+UTILS = ft_arr_cpy ft_count_line ft_map_to_arr ft_p_position struct main
 
 SRCS = $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  	$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))
