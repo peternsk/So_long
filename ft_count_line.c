@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:13:49 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/08 22:51:37 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/15 23:21:13 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ int		ft_count_line(char *file_path)
 			break;
 		if( c == '\n')
 			line_num++;
-		//printf("%c", c);
 	}
 	close(fd);
-	//printf("\n%d\n", line_num);
 	return(line_num);
 }

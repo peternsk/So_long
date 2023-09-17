@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/08 23:53:11 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/17 15:12:42 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "libft/libft.h"
+# include <fcntl.h>
+# include <string.h>
+
+
 
 typedef struct s_game_map
 {
@@ -25,31 +29,40 @@ typedef struct s_game_map
 	int		player;
 	int		way_out;
 	int		height;
-	int		lenght;
+	int		width;
 	int		indx;
+	int		fd;
 	
 }			t_game_map;
 
-t_game_map	*create_game_map(char *file_path)
+typedef	struct s_flood_maze
 {
-	t_game_map	*game_map;
+	int		x;
+	int		y;
+	char	**maze;
+	char	fill;
+	int		height;
+	int		width;
+	int		collect;
+	int		exit;
+	char	maze_char;	
 
-	game_map = malloc(1 * sizeof(t_game_map));
-	if (!game_map)
-		return (NULL);
-	game_map->map = 0;
-	game_map->collect = 0;
-	game_map->player = 0;
-	game_map->way_out = 0;
-	game_map->height = 0;
-	game_map->lenght = 0;
-	game_map->indx = 0;
-	return (game_map);
-}
+}			t_flood_maze;
+
 
 t_game_map	*create_game_map(char *file_path);
-void		ft_check_line_char(char *line, int indx, int player, int collectible, int way_out);
+t_flood_maze *create_flood_maze(t_game_map *g_game_map);
+
 void		ft_check_file_ext(char *map_file, char *req_ext);
+void		ft_map_to_arr(t_game_map *g_game_map);
+void		ft_check_line_char(char *line, int indx, t_game_map *g_game_map);
 int			ft_count_line(char *file_path);
+void		ft_is_map_close(t_game_map *g_game_map);
+void		ft_is_map_rect(int width, t_game_map *g_game_map);
+void		ft_check_mando_char(t_game_map *g_game_map);
+void		ft_p_position(t_game_map *g_game_map, t_flood_maze *g_flood_maze);
+void		ft_arr_cpy(t_game_map *g_game_map, t_flood_maze *g_maze);
+void		ft_is_path_valid(int x, int y, char **map, char fill, int height, int width, t_flood_maze *maze);
+
 
 #endif

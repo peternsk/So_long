@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:19:21 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/08 15:19:27 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/12 15:43:15 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 		char *file_ext  = ".ber" (the require extention
 		
-		ft_strlen(argv[1]) = the lenght of the the second argument )
+		ft_strlen(argv[1]) = the width of the the second argument )
 				ex : ./so_long source/map1.ber
 				
 				ft_strlen(argv[1])  = 15
