@@ -9,8 +9,9 @@ INC_DIR = include
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-PARSING = srcs/ft_check_file_ext ft_check_line_char ft_check_mando_char ft_is_map_close ft_is_map_rect ft_is_path_valid
-UTILS = ft_arr_cpy ft_count_line ft_map_to_arr ft_p_position struct main
+PARSING = ft_check_file_ext ft_check_line_char ft_check_mando_char ft_is_map_close ft_is_map_rect ft_is_path_valid
+UTILS = ft_arr_cpy ft_count_line ft_map_to_arr ft_p_position struct main ft_flood_fill ft_load_png ft_arr_texture \
+		ft_texture_to_image
 
 SRCS = $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  	$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))
@@ -24,8 +25,10 @@ LIBFT_INC = ${LIBFT_PATH}/include
 MLX_PATH = MLX42/build
 MLX_LIB = ${MLX_PATH}/libmlx42.a
 # Change this path for your homebrew path
-MLX_INC = -Iinclude -lglfw -L"/Users/${USER}/homebrew/opt/glfw/lib/"
+MLX_INC = -Iinclude -lglfw -L "/opt/homebrew/Cellar/glfw/3.3.8/lib"
 MLX_FLAGS = -framework Cocoa -framework OpenGL -framework IOKit
+
+#$(LIBMLX)/build/libmlx42.a -Iinclude -lglfw -L "/Users/lvergnas/.brew/opt/glfw/lib/"
 
 GREEN	= \033[32;1m
 CYAN	= \033[36;1m
