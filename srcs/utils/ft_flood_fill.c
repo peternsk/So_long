@@ -90,18 +90,18 @@
 #include "../so_long.h"
 
 
-void    ft_flood_fill(int x, int y, t_flood_maze *maze)
+void    ft_flood_fill(int x, int y, t_game_map *game)
 {
-    if(maze->maze[x][y] == '1' || maze->maze[x][y] == '+')
+    if(game->maze[x][y] == '1' || game->maze[x][y] == '+')
         return;
-    if(maze->maze[x][y] == 'C')
-        maze->collect++;
-    if(maze->maze[x][y] == 'E')
-        maze->exit++;
-    maze->maze[x][y] = maze->fill;
-    ft_flood_fill(x, y + 1, maze);
-    ft_flood_fill(x, y - 1, maze);
-    ft_flood_fill(x + 1, y, maze);
-    ft_flood_fill(x - 1, y, maze);
+    if(game->maze[x][y] == 'C')
+        game->collect_flood++;
+    if(game->maze[x][y] == 'E')
+        game->exit_flood++;
+    game->maze[x][y] = game->fill;
+    ft_flood_fill(x, y + 1, game);
+    ft_flood_fill(x, y - 1, game);
+    ft_flood_fill(x + 1, y, game);
+    ft_flood_fill(x - 1, y, game);
 }
 

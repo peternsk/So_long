@@ -6,23 +6,23 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:54:25 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/20 00:41:11 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/28 09:18:05 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_arr_cpy(t_game_map *g_game_map, t_flood_maze *g_maze)
+void	ft_arr_cpy(t_game_map *game)
 {
 	int i = 0;
 
-	g_maze->maze = (char**)malloc(g_game_map->height * sizeof(char*));
-	if(!g_maze->maze)
+	game->maze = (char**)malloc(game->height * sizeof(char*));
+	if(!game->maze)
 		return;
-	while(i < g_game_map->height)
+	while(i < game->height)
 	{
-		g_maze->maze[i] = ft_strdup(g_game_map->map[i]);
-		//printf("%s\n", g_game_map->map[i]);
+		game->maze[i] = ft_strdup(game->map[i]);
+		//printf("%s\n", game->map[i]);
 		i++;
 	}
 }

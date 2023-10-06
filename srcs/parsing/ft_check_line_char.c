@@ -6,13 +6,13 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:35:37 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/25 08:58:06 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/28 09:19:33 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_check_line_char(char *line, int indx, t_game_map *g_game_map)
+void	ft_check_line_char(char *line, int indx, t_game_map *game)
 {
 	indx = 0;
 
@@ -21,17 +21,17 @@ void	ft_check_line_char(char *line, int indx, t_game_map *g_game_map)
 		if( line[indx] == '0' || line[indx] == '1' || line[indx] == 'C' || line[indx] == 'E' || line[indx] == 'P' || line[indx] == '\n')
 		{
 			if(line[indx] == 'C')
-				g_game_map->collect++;
+				game->collect++;
 			if(line[indx] == 'P')
-				g_game_map->player++;
+				game->player++;
 			if(line[indx] == 'E')
-				g_game_map->way_out++;
+				game->way_out++;
 		indx++;
-		g_game_map->width = indx;
+		game->width = indx;
 		}
 		else
 			ft_exiting_prog(1, "invalid character..error\n");
 	}
-	if(g_game_map->player > 1 || g_game_map->way_out > 1)
+	if(game->player > 1 || game->way_out > 1)
 		ft_exiting_prog(1, "too many players or exits on the map\n");
 }

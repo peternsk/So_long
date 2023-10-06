@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:42:56 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/18 11:19:12 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/28 09:18:05 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@
 
 #include "../so_long.h"
 
-void	ft_is_map_close(t_game_map *g_game_map)
+void	ft_is_map_close(t_game_map *game)
 {
 	int i = 0;
 	int j = 0;
 
-	while(i < g_game_map->height)
+	while(i < game->height)
 	{
-		if(i == 0 || i == g_game_map->height - 1)
+		if(i == 0 || i == game->height - 1)
 		{
-			while(j != g_game_map->width - 1)
+			while(j != game->width - 1)
 			{
-				if(g_game_map->map[i][j] == '1')
+				if(game->map[i][j] == '1')
 					j++;
 				else
 					ft_exiting_prog(1, "open map..\n");
@@ -54,9 +54,9 @@ void	ft_is_map_close(t_game_map *g_game_map)
 			i++;
 			j = 0;
 		}
-		if(i > 0 && i < g_game_map->height - 1) 
+		if(i > 0 && i < game->height - 1) 
 		{
-			if(g_game_map->map[i][j] == '1' && g_game_map->map[i][g_game_map->width - 1] == '1')
+			if(game->map[i][j] == '1' && game->map[i][game->width - 1] == '1')
 				i++;
 			else
 				ft_exiting_prog(1, "open map..\n");

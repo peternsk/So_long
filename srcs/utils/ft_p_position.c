@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:04:57 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/18 12:23:58 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/30 07:17:38 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@
 
 #include "../so_long.h"
 
-void	ft_p_position(t_game_map *g_game_map, t_flood_maze *g_flood_maze)
+void	ft_p_position(t_game_map *game)
 {
 	int x = 0;
 	int y = 0;
 	
-	while(x < g_game_map->height)
+	while(x < game->height)
 	{
-		while( y < g_game_map->width)
+		while( y < game->width)
 		{
-			if(g_game_map->map[x][y] == 'P')
+			if(game->map[x][y] == 'P')
 			{
-				g_flood_maze->x = x;
-				g_flood_maze->y = y;
+				game->player_x = x;
+				game->player_y = y;
 				break;
 			}
 			else

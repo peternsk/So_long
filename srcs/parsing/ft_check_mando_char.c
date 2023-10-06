@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:07:13 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/25 11:05:35 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/28 09:18:05 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@
 
 #include "../so_long.h"
 
-void		ft_check_mando_char(t_game_map *g_game_map)
+void		ft_check_mando_char(t_game_map *game)
 {
-	int num_of_player 	= g_game_map->player;
-	int num_of_exit		= g_game_map->way_out;
-	int num_of_collect 	= g_game_map->collect;
+	int num_of_player 	= game->player;
+	int num_of_exit		= game->way_out;
+	int num_of_collect 	= game->collect;
 
 	if(num_of_player == 1 && num_of_exit == 1 && num_of_collect > 0)
 		printf("all mando char are in map\n");

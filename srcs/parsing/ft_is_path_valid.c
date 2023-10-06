@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:27:54 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/18 13:12:45 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/29 07:10:36 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@
 
 #include "../so_long.h"
 
-void	ft_is_path_valid(t_game_map *g_game_map, t_flood_maze * g_maze)
+void	ft_is_path_valid(t_game_map *game)
 {
-	ft_flood_fill(g_maze->x, g_maze->y, g_maze);
-	
-	if(g_game_map->collect != g_maze->collect || g_game_map->way_out != g_maze->exit)
-		ft_exiting_prog(1, "unreachebla char");
+	ft_flood_fill(game->player_x, game->player_y, game);
+	if((game->collect != game->collect_flood) || (game->way_out != game->exit_flood))
+	{
+		ft_exiting_prog(1, "unreachebla char\n");
+	}
 	else
 		printf("valid path\n");
 }

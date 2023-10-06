@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:49:00 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/18 09:48:16 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/28 09:18:05 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@
 
 #include "../so_long.h"
 
-void	ft_is_map_rect(int width, t_game_map *g_game_map )
+void	ft_is_map_rect(int width, t_game_map *game )
 {
 	int i = 0;
-	width = ft_strlen(g_game_map->map[i]) - 1;
+	width = ft_strlen(game->map[i]) - 1;
 
-	while( i < g_game_map->height)
+	while( i < game->height)
 	{
-		if(g_game_map->width == width)
+		if(game->width == width)
 			i++;
 		else
 			ft_exiting_prog(1, "map not rectangle\n");

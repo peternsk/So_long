@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:10:17 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/25 12:16:47 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/09/30 07:20:31 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,57 +14,40 @@
 
 t_game_map	*create_game_map(char *file_path)
 {
-	t_game_map	*game_map;
+	t_game_map	*game;
 
-	game_map = malloc(1 * sizeof(t_game_map));
-	if (!game_map)
+	game = malloc(1 * sizeof(t_game_map));
+	if (!game)
 		return (NULL);
-	game_map->map 		= 0;
-	game_map->collect 	= 0;
-	game_map->player 	= 0;
-	game_map->way_out 	= 0;
-	game_map->height 	= ft_count_line(file_path);
-	game_map->width 	= 0;
-	game_map->indx 		= 0;
-	game_map->fd		= open(file_path, O_RDONLY); 
+	game->map 		= 0;
+	game->collect 	= 0;
+	game->player 	= 0;
+	game->way_out 	= 0;
+	game->height 	= ft_count_line(file_path);
+	game->width 	= 0;
+	game->indx 		= 0;
+	game->fd		= open(file_path, O_RDONLY); 
 	
-	return (game_map);
-}
 
-t_flood_maze *create_flood_maze(t_game_map *g_game_map)
-{
-	t_flood_maze *flood_maze;
+	game->player_x			= 0;
+	game->player_y			= 0;
+	game->maze		= 0;
+	game->fill       = '+';
+	game->collect_flood	= 0;
+	game->exit_flood	= 0;
+	game->maze_char	= 0;
+	game->move_cnt = 0;
 
-	flood_maze = malloc(1 * sizeof(t_flood_maze));
-	if(!flood_maze)
-		return(NULL);
-	flood_maze->x		= 0;
-	flood_maze->y		= 0;
-	flood_maze->maze	= 0;
-	flood_maze->fill	 = '+';
-	flood_maze->height 	= g_game_map->height;
-	flood_maze->width 	= g_game_map->width;
-	flood_maze->collect = 0;
-	flood_maze->exit	= 0;
-	flood_maze->maze_char = 0; //flood_maze->maze[flood_maze->x][flood_maze->y];
+	game->collect_maze	= 0;;
+	game->exit_maze		= 0;
+	game->floor_maze	= 0;
+	game->player_maze	= 0;
+	game->wall	= 0;
+	game->x_64		= 64;
+	game->y_64		= 64;
 
-	return(flood_maze);
-}
-
-t_image_maze * create_image_maze()
-{
-	t_image_maze *image_maze;
-
-	image_maze = malloc( 1 * sizeof(t_image_maze));
-	if(!image_maze)
-		return(NULL);
-	image_maze->collect		= 0;
-	image_maze->exit		= 0;
-	image_maze->floor		 = 0;
-	image_maze->player		= 0;
-	image_maze->wall		= 0;
-	image_maze->x_64		= 64;
-	image_maze->y_64		= 64;
-
-	return(image_maze);
+	// mlx_texture_t *arr_txtur[6];
+	// mlx_image_t *arr_img[6];
+	
+	return (game);
 }
