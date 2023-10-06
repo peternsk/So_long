@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:31:09 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/28 10:00:26 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/06 09:43:29 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 void	ft_texture_to_image(t_game_map *game)
 {
 
-	game->arr_img[0]  = mlx_texture_to_image(game->mlx, game->arr_txtur[WALL]);
-	game->arr_img[1]  = mlx_texture_to_image(game->mlx, game->arr_txtur[FLOOR]);
-	game->arr_img[2]  = mlx_texture_to_image(game->mlx, game->arr_txtur[COLLECT]);
-	game->arr_img[3]  = mlx_texture_to_image(game->mlx, game->arr_txtur[PLAYER]);
-	game->arr_img[4]  = mlx_texture_to_image(game->mlx, game->arr_txtur[WAY_OUT_CLOSE]);
-	game->arr_img[5]  = mlx_texture_to_image(game->mlx, game->arr_txtur[WAY_OUT_OPEN]);
+	game->arr_img[WALL]  = mlx_texture_to_image(game->mlx, game->arr_txtur[WALL]);
+	game->arr_img[FLOOR]  = mlx_texture_to_image(game->mlx, game->arr_txtur[FLOOR]);
+	game->arr_img[COLLECT]  = mlx_texture_to_image(game->mlx, game->arr_txtur[COLLECT]);
+	game->arr_img[PLAYER]  = mlx_texture_to_image(game->mlx, game->arr_txtur[PLAYER]);
+	game->arr_img[WAY_OUT_CLOSE]  = mlx_texture_to_image(game->mlx, game->arr_txtur[WAY_OUT_CLOSE]);
+	game->arr_img[WAY_OUT_OPEN]  = mlx_texture_to_image(game->mlx, game->arr_txtur[WAY_OUT_OPEN]);
 }

@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:29 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/01 07:04:45 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/06 09:41:07 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,14 @@ int	main(int argc, char **argv)
 	ft_texture_to_image(game);
 	ft_load_png(game);
 	// ft_player_moves(game);
+	printf("player position x : %d", game->player_x);
+	printf("player position y : %d", game->player_y);
+	printf("avant mlx_loop\n");
 
-	mlx_loop(game->mlx);
+	printf("avant keyhook\n");
 	mlx_loop_hook(game->mlx, ft_load_png, game);
 	mlx_key_hook(game->mlx, &ft_player_moves, game);
+	mlx_loop(game->mlx);
 	mlx_delete_image(game->mlx, img);
 	mlx_terminate(game->mlx);
 	return (EXIT_SUCCESS);
