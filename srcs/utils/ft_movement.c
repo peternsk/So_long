@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:17:38 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/06 09:51:24 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/06 18:41:09 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ int	move_check(t_game_map *game, int x, int y)
 	if (game->map[x][y] == 'C')
 	{
 		game->collect_maze++;
-		game->map[x][y] = '0';
-		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], y, x);
+		game->map[x][y] = 'P';
 		return (1);
 	}
 	if (game->map[x][y] == 'E' && game->collect_maze == game->collect)
@@ -59,8 +58,8 @@ void	move_up(t_game_map *game)
 {
 	if (move_check(game, game->player_x - 1, game->player_y))
 	{
-		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], game->player_x, game->player_y);
-		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], game->player_x - 1, game->player_y);
+		game->map[game->player_x][game->player_y] = '0';
+		game->map[game->player_x - 1][game->player_y] = 'P';
 		game->player_x--;
 		printf("Movement count: %d\n", ++game->move_cnt);
 	}
@@ -70,8 +69,8 @@ void	move_down(t_game_map *game)
 {
 	if (move_check(game, game->player_x + 1, game->player_y))
 	{
-		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], game->player_x, game->player_y);
-		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], game->player_x + 1, game->player_y);
+		game->map[game->player_x][game->player_y] = '0';
+		game->map[game->player_x + 1][game->player_y] = 'P';
 		game->player_x++;
 		printf("Movement count: %d\n", ++game->move_cnt);
 	}
@@ -81,8 +80,8 @@ void	move_left(t_game_map *game)
 {
 	if (move_check(game, game->player_x, game->player_y - 1))
 	{
-		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], game->player_x, game->player_y);
-		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], game->player_x, game->player_y - 1);
+		game->map[game->player_x][game->player_y] = '0';
+		game->map[game->player_x][game->player_y - 1] = 'P';
 		game->player_y--;
 		printf("Movement count: %d\n", ++game->move_cnt);
 	}
@@ -92,8 +91,8 @@ void	move_right(t_game_map *game)
 {
 	if (move_check(game, game->player_x, game->player_y + 1))
 	{
-		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], game->player_x, game->player_y);
-		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], game->player_x, game->player_y + 1);
+		game->map[game->player_x][game->player_y] = '0';
+		game->map[game->player_x][game->player_y + 1] = 'P';
 		game->player_y++;
 		printf("Movement count: %d\n", ++game->move_cnt);
 	}
