@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:13:49 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/18 09:48:16 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/07 14:39:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h" 
+#include "../../so_long.h" 
 /*
 	this function will help to count the number of line(row) in the file.
 	to be more specific, it will count the number of '\n' in the file 

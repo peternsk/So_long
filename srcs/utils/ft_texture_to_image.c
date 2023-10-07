@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_texture_to_image.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:31:09 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/06 09:43:29 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/07 14:39:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
         return(EXIT_FAILURE);
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_texture_to_image(t_game_map *game)
 {

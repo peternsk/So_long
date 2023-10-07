@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:25:31 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/28 09:18:05 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/07 14:39:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_init(mlx_t *mlx, t_game_map *game)
 {

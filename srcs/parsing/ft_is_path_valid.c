@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_path_valid.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:27:54 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/29 07:10:36 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/07 14:38:25 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 	################                                ################
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_is_path_valid(t_game_map *game)
 {

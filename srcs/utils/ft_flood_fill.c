@@ -87,7 +87,7 @@
 						==> the return statement return a value or a variable to the calling function
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 
 void    ft_flood_fill(int x, int y, t_game_map *game)

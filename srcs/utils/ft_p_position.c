@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_p_position.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:04:57 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/30 07:17:38 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/07 14:39:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 				then ill assign my incrementation index the respective value of x and y.
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_p_position(t_game_map *game)
 {

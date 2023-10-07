@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_player_moves.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:58:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/06 08:59:29 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/07 14:39:34 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@
 	bool mlx_loop_hook(mlx_t* mlx, void (*f)(void*), void* param);
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_player_moves(mlx_key_data_t keydata, void* param)
 {

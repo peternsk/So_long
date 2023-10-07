@@ -14,7 +14,7 @@
 
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_arr_texture(t_game_map* image)
 {
