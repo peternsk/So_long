@@ -6,13 +6,9 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 09:04:30 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/08 12:19:00 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/08 12:28:51 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-	this function will load png to texture 
-*/
 
 #include "../../so_long.h"
 

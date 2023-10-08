@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:10:17 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/07 14:39:34 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/08 12:35:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ t_game_map	*create_game_map(char *file_path)
 	game->wall	= 0;
 	game->x_64		= 64;
 	game->y_64		= 64;
-
-	// mlx_texture_t *arr_txtur[6];
-	// mlx_image_t *arr_img[6];
 	
 	return (game);
 }

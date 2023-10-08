@@ -6,28 +6,11 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:13:49 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/07 14:39:34 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/08 12:28:13 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h" 
-/*
-	this function will help to count the number of line(row) in the file.
-	to be more specific, it will count the number of '\n' in the file 
-
-	rep : 
-		map.ber ==>		
-					1111111111\n
-					1000000001\n
-					1000000001\n
-					1000000001\n
-					1000000001\n
-					1000000001\n
-					1111111111\0
-		
-		this function will read the file and each time that it will encounter a 
-		'\n' it will increment my counter. till the end of file.
-*/
 
 int		ft_count_line(char *file_path)
 {
