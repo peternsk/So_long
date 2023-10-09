@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_map_rect.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:49:00 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/28 09:18:05 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/07 14:38:20 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 		==> all row must be of the same width.
 */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_is_map_rect(int width, t_game_map *game )
 {

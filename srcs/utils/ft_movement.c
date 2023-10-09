@@ -6,33 +6,11 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:17:38 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 00:40:48 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/09 11:15:47 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
-
-/*
-
- * Draws a new instance of an image, it will then share the same
- * pixel buffer as the image.
- * 
- * NOTE: Keep in mind that the instance array gets reallocated, try
- * to store the return value to the instance! 
- * NOT the pointer! It will become invalid!
- * 
- * WARNING: Try to display as few images on the window as possible,
- * drawing too many images will cause a loss in peformance!
- * 
- * @param[in] mlx The MLX instance handle.
- * @param[in] img The image to draw on the screen.
- * @param[in] y The X position.
- * @param[in] x The Y position.
- * @return Index to the instance, or -1 on failure.
-
-int32_t mlx_image_to_window(mlx_t* mlx, mlx_image_t* img, int32_t y, int32_t x);
-
-*/
+#include "../../so_long.h"
 
 int	move_check(t_game_map *game, int x, int y)
 {

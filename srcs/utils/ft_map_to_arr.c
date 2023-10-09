@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map_to_arr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 09:58:27 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/28 09:18:05 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/08 12:27:47 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_map_to_arr(t_game_map *game)
 {
@@ -25,6 +25,5 @@ void	ft_map_to_arr(t_game_map *game)
 	{
 		game->map[i] = get_next_line(game->fd);
 		ft_check_line_char(game->map[i], game->indx, game);
-		//printf("%s\n", game->map[i]);
 	}
 }
