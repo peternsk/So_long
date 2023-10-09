@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/08 12:04:53 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/09 11:56:17 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ void    	ft_flood_fill(int x, int y, t_game_map *game);
 void		ft_is_path_valid(t_game_map *game);
 
 //mlx
-void		ft_init(mlx_t *mlx, t_game_map *game);
 void		ft_load_png(void *param);
 void		ft_arr_texture(t_game_map* image);
 void		ft_texture_to_image(t_game_map *game);
@@ -101,5 +100,8 @@ void		move_up(t_game_map *game);
 void		move_down(t_game_map *game);
 void		move_left(t_game_map *game);
 void		move_right(t_game_map *game);
+
+//assembled functions
+int			ft_init(t_game_map *game);
 
 #endif

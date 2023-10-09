@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:29 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/08 12:35:09 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/09 11:55:23 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,6 @@ int	main(int argc, char **argv)
 	ft_p_position(game);
 	ft_arr_cpy(game);
 	ft_is_path_valid(game);
-	game->mlx = mlx_init((game->width * 64), (game->height * 64), "SO_LONG",
-			true);
-	if (!game->mlx)
-	{
-		puts(mlx_strerror(mlx_errno));
-		return (EXIT_FAILURE);
-	}
-	ft_arr_texture(game);
-	ft_texture_to_image(game);
-	mlx_loop_hook(game->mlx, ft_load_png, game);
-	mlx_key_hook(game->mlx, &ft_player_moves, game);
-	mlx_loop(game->mlx);
-	mlx_delete_image(game->mlx, img);
-	mlx_terminate(game->mlx);
-	return (EXIT_SUCCESS);
+	
+	ft_init(game);
 }

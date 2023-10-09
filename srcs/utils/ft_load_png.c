@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_load_png.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 09:04:30 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 11:15:35 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/09 12:45:44 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_load_png(void *param)
 	int			j;
 	int			x;
 	int			y;
+	int			p_x;
+	int			p_y;
 	
 	game = param;
 	i = 0;
@@ -35,17 +37,14 @@ void	ft_load_png(void *param)
 				mlx_image_to_window(game->mlx, game->arr_img[FLOOR], x, y);
 			else if (game->map[i][j] == 'C')
 				mlx_image_to_window(game->mlx, game->arr_img[COLLECT], x, y);
-			else if (game->map[i][j] == 'E')
-			{
-				if (game->collect_maze == game->collect_flood)
-					mlx_image_to_window(game->mlx, game->arr_img[WAY_OUT_OPEN],
-							x, y);
-				else
-					mlx_image_to_window(game->mlx, game->arr_img[WAY_OUT_CLOSE],
-							x, y);
-			}
+			else if (game->map[i][j] == 'E')			
+				mlx_image_to_window(game->mlx, game->arr_img[WAY_OUT_CLOSE], x, y);
 			else if (game->map[i][j] == 'P')
-				mlx_image_to_window(game->mlx, game->arr_img[PLAYER], x, y);
+			{
+				mlx_image_to_window(game->mlx, game->arr_img[FLOOR], x, y);
+				p_x = x;
+				p_y = y;
+			}
 			x = x + 64;
 			j++;
 		}
@@ -54,4 +53,5 @@ void	ft_load_png(void *param)
 		x = 0;
 		y = y + 64;
 	}
+	mlx_image_to_window(game->mlx, game->arr_img[PLAYER], p_x, p_y);
 }
