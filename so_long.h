@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/08 12:04:53 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/09 11:31:12 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ typedef struct s_game_map
 
 t_game_map		*create_game_map(char *file_path);
 
-void		ft_check_file_ext(char *map_file, char *req_ext);
+void			ft_check_file_ext(char *map_file, char *req_ext);
 void		ft_check_line_char(char *line, int indx, t_game_map *game);
 void		ft_map_to_arr(t_game_map *game);
 void		ft_check_line_char(char *line, int indx, t_game_map *game);
@@ -96,7 +96,7 @@ void		ft_player_moves(mlx_key_data_t keydata, void* param);
 void   		ft_refresh_img(t_game_map *game);
 
 //player move
-int			move_check(t_game_map *game, int x, int y);
+void		move_check(t_game_map *game, int x, int y);
 void		move_up(t_game_map *game);
 void		move_down(t_game_map *game);
 void		move_left(t_game_map *game);
