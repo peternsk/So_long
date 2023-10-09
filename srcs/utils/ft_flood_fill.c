@@ -12,19 +12,17 @@
 
 #include "../../so_long.h"
 
-
-void    ft_flood_fill(int x, int y, t_game_map *game)
+void	ft_flood_fill(int x, int y, t_game_map *game)
 {
-    if(game->maze[x][y] == '1' || game->maze[x][y] == '+')
-        return;
-    if(game->maze[x][y] == 'C')
-        game->collect_flood++;
-    if(game->maze[x][y] == 'E')
-        game->exit_flood++;
-    game->maze[x][y] = game->fill;
-    ft_flood_fill(x, y + 1, game);
-    ft_flood_fill(x, y - 1, game);
-    ft_flood_fill(x + 1, y, game);
-    ft_flood_fill(x - 1, y, game);
+	if (game->maze[x][y] == '1' || game->maze[x][y] == '+')
+		return ;
+	if (game->maze[x][y] == 'C')
+		game->collect_flood++;
+	if (game->maze[x][y] == 'E')
+		game->exit_flood++;
+	game->maze[x][y] = game->fill;
+	ft_flood_fill(x, y + 1, game);
+	ft_flood_fill(x, y - 1, game);
+	ft_flood_fill(x + 1, y, game);
+	ft_flood_fill(x - 1, y, game);
 }
-

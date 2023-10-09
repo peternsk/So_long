@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 11:31:12 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/09 16:25:27 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ typedef struct s_game_map
 	int		fd;
 	int		player_x;
 	int		player_y;
+	int		ext_p_x;
+	int		ext_p_y;
 	char	fill;
 	int		collect_flood;
 	int		exit_flood;
@@ -63,6 +65,7 @@ typedef struct s_game_map
 	int wall;
 	int x_64;
 	int y_64;
+	
 	mlx_texture_t *arr_txtur[NUM_OF_IMAGE];
 	mlx_image_t *arr_img[NUM_OF_IMAGE];
 	mlx_t *mlx;
@@ -74,7 +77,7 @@ typedef struct s_game_map
 
 t_game_map		*create_game_map(char *file_path);
 
-void			ft_check_file_ext(char *map_file, char *req_ext);
+void		ft_check_file_ext(char *map_file, char *req_ext);
 void		ft_check_line_char(char *line, int indx, t_game_map *game);
 void		ft_map_to_arr(t_game_map *game);
 void		ft_check_line_char(char *line, int indx, t_game_map *game);
@@ -83,12 +86,12 @@ void		ft_is_map_close(t_game_map *game);
 void		ft_is_map_rect(int width, t_game_map *game);
 void		ft_check_mando_char(t_game_map *game);
 void		ft_p_position(t_game_map *game);
+void		ft_ext_position(t_game_map *game);
 void		ft_arr_cpy(t_game_map *game);
 void    	ft_flood_fill(int x, int y, t_game_map *game);
 void		ft_is_path_valid(t_game_map *game);
 
 //mlx
-void		ft_init(mlx_t *mlx, t_game_map *game);
 void		ft_load_png(void *param);
 void		ft_arr_texture(t_game_map* image);
 void		ft_texture_to_image(t_game_map *game);
@@ -101,5 +104,8 @@ void		move_up(t_game_map *game);
 void		move_down(t_game_map *game);
 void		move_left(t_game_map *game);
 void		move_right(t_game_map *game);
+
+//assembled functions
+int			ft_init(t_game_map *game);
 
 #endif

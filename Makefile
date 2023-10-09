@@ -11,7 +11,7 @@ OBJS_DIR = objs
 
 PARSING = ft_check_file_ext ft_check_line_char ft_check_mando_char ft_is_map_close ft_is_map_rect ft_is_path_valid
 UTILS = ft_arr_cpy ft_count_line ft_map_to_arr ft_p_position struct main ft_flood_fill ft_load_png ft_arr_texture \
-		ft_texture_to_image ft_player_moves ft_init ft_movement ft_refresh__img
+		ft_texture_to_image ft_player_moves ft_movement ft_refresh__img ft_init ft_ext_position
 
 SRCS = $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  	$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))

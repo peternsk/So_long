@@ -6,43 +6,20 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:49:00 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/07 14:38:20 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/09 15:59:56 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	this function will determine if the map is rectangle.
-	here the geometric definition definition of of a rectangle :
-
-		Rectangle is a closed polygon with four sides i.e., a quadrilateral 
-		in which all four angles are equal and the measure of each angle
-		is 90 degrees and the opposite side of the quadrilateral is parallel
-		and equal. Any quadrilateral that follows the given criteria can be 
-		considered a Rectangle, thus a square can be considered a rectangle but 
-		the opposite is not the same, i.e. a rectangle is not a square. 
-
-	MAP :
-			############         	#############             	#				#####
-			############			############				##				####
-			############			##########					###				######
-			############			#########					####			#####
-			############			########					#####			####
-			############			###########					######			###
-
-	with this descriptoin, i'll have to come with this description for this function.
-		==> all row must be of the same width.
-*/
-
 #include "../../so_long.h"
 
-void	ft_is_map_rect(int width, t_game_map *game )
+void	ft_is_map_rect(int width, t_game_map *game)
 {
 	int i = 0;
 	width = ft_strlen(game->map[i]) - 1;
 
-	while( i < game->height)
+	while (i < game->height)
 	{
-		if(game->width == width)
+		if (game->width == width)
 			i++;
 		else
 			ft_exiting_prog(1, "map not rectangle\n");
