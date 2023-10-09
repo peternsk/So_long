@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:04:57 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/08 12:27:32 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/09 15:31:28 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ void	ft_p_position(t_game_map *game)
 {
 	int x = 0;
 	int y = 0;
-	
-	while(x < game->height)
+
+	while (x < game->height)
 	{
-		while( y < game->width)
+		while (y < game->width)
 		{
-			if(game->map[x][y] == 'P')
+			if (game->map[x][y] == 'P')
 			{
 				game->player_x = x;
 				game->player_y = y;
-				break;
+				break ;
 			}
 			else
 				y++;
 		}
 		y = 0;
-	x++;
+		x++;
 	}
 }

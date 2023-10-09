@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:29 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 11:55:23 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/09 16:06:40 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	mlx_image_t	*img;
-	t_game_map	*game;
+	mlx_image_t *img;
+	t_game_map *game;
 
 	(void)argc;
 	img = NULL;
@@ -29,8 +29,9 @@ int	main(int argc, char **argv)
 	ft_is_map_rect(game->width, game);
 	ft_check_mando_char(game);
 	ft_p_position(game);
+	ft_ext_position(game);
 	ft_arr_cpy(game);
 	ft_is_path_valid(game);
-	
+
 	ft_init(game);
 }

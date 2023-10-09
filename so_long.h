@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 11:56:17 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/09 15:12:26 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ typedef struct s_game_map
 	int		fd;
 	int		player_x;
 	int		player_y;
+	int		ext_p_x;
+	int		ext_p_y;
 	char	fill;
 	int		collect_flood;
 	int		exit_flood;
@@ -63,6 +65,7 @@ typedef struct s_game_map
 	int wall;
 	int x_64;
 	int y_64;
+	
 	mlx_texture_t *arr_txtur[NUM_OF_IMAGE];
 	mlx_image_t *arr_img[NUM_OF_IMAGE];
 	mlx_t *mlx;
@@ -83,6 +86,7 @@ void		ft_is_map_close(t_game_map *game);
 void		ft_is_map_rect(int width, t_game_map *game);
 void		ft_check_mando_char(t_game_map *game);
 void		ft_p_position(t_game_map *game);
+void		ft_ext_position(t_game_map *game);
 void		ft_arr_cpy(t_game_map *game);
 void    	ft_flood_fill(int x, int y, t_game_map *game);
 void		ft_is_path_valid(t_game_map *game);
