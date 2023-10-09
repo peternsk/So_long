@@ -20,7 +20,7 @@ void	ft_arr_texture(t_game_map* image)
 {
 	mlx_texture_t* texture;
 	
-	image->arr_txtur[WALL] = (texture = mlx_load_png("./images/wall_tree.png"));
+	image->arr_txtur[WALL] = (texture = mlx_load_png("./images/tree_shadow.png"));
 	image->arr_txtur[FLOOR] = (texture = mlx_load_png("./images/grass_2.png"));
 	image->arr_txtur[COLLECT] = (texture = mlx_load_png("./images/coins.png"));
 	image->arr_txtur[PLAYER] = (texture = mlx_load_png("./images/player.png"));

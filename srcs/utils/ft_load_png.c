@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 09:04:30 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/07 19:36:50 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/09 00:27:54 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void	ft_load_png(void *param)
 				mlx_image_to_window(game->mlx, game->arr_img[FLOOR], x, y);
 			else if(game->map[i][j] == 'C')
 				mlx_image_to_window(game->mlx, game->arr_img[COLLECT], x, y);
-			else if(game->map[i][j] == 'P')
-				mlx_image_to_window(game->mlx, game->arr_img[PLAYER], x, y);
 			else if(game->map[i][j] == 'E')
 			{
 				if(game->collect_maze == game->collect_flood)
@@ -46,6 +44,8 @@ void	ft_load_png(void *param)
 				else
 					mlx_image_to_window(game->mlx, game->arr_img[WAY_OUT_CLOSE], x, y);
 			}
+			else if(game->map[i][j] == 'P')
+				mlx_image_to_window(game->mlx, game->arr_img[PLAYER], x, y);
 			x = x + 64;
 			j++;
 		}

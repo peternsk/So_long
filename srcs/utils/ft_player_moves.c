@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:58:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/06 14:13:39 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/08 19:58:19 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,5 @@ void	ft_player_moves(mlx_key_data_t keydata, void* param)
 		move_right(game);
 	else if ((keydata.key == MLX_KEY_A || keydata.key == MLX_KEY_LEFT) && keydata.action == MLX_PRESS)
 		move_left(game);
-	ft_load_png(game);
-	// mlx_image_to_window(game->mlx, );
-	// printf(">> POSITION : X : %d\n", game->player_x);
-	// printf(">> POSITION : Y : %d\n", game->player_y);
+	//ft_load_png(game);
 }
