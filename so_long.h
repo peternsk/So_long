@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 16:29:30 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/09 23:51:44 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,10 @@ void		ft_load_png(void *param);
 void		ft_arr_texture(t_game_map* image);
 void		ft_texture_to_image(t_game_map *game);
 void		ft_player_moves(mlx_key_data_t keydata, void* param);
-void   		ft_refresh_img(t_game_map *game);
+void   		ft_free(t_game_map *game);
 
 //player move
-int		move_check(t_game_map *game, int x, int y);
+int			move_check(t_game_map *game, int x, int y);
 void		move_up(t_game_map *game);
 void		move_down(t_game_map *game);
 void		move_left(t_game_map *game);
@@ -107,5 +107,8 @@ void		move_right(t_game_map *game);
 
 //assembled functions
 int			ft_init(t_game_map *game);
+
+//free
+void		ft_free(t_game_map *game);
 
 #endif
