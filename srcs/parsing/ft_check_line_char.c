@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:35:37 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 15:59:09 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 11:13:25 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_check_line_char(char *line, int indx, t_game_map *game)
 {
 	indx = 0;
-
 	while (line[indx] != '\0')
 	{
 		if (line[indx] == '0' || line[indx] == '1' || line[indx] == 'C'

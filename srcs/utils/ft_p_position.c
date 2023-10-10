@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:04:57 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 15:31:28 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 12:41:11 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ft_p_position(t_game_map *game)
 {
-	int x = 0;
-	int y = 0;
+	int	x; 
+	int	y;
 
+	x = 0;
+	y = 0;
 	while (x < game->height)
 	{
 		while (y < game->width)

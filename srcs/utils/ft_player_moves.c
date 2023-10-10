@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_player_moves.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:58:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 11:16:12 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/10 12:42:45 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ void	ft_player_moves(mlx_key_data_t keydata, void *param)
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_RELEASE)
 		mlx_close_window(game->mlx);
 	else if ((keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_UP)
-			&& keydata.action == MLX_PRESS)
+		&& keydata.action == MLX_PRESS)
 		move_up(game);
 	else if ((keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_DOWN)
-			&& keydata.action == MLX_PRESS)
+		&& keydata.action == MLX_PRESS)
 		move_down(game);
 	else if ((keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT)
-			&& keydata.action == MLX_PRESS)
+		&& keydata.action == MLX_PRESS)
 		move_right(game);
 	else if ((keydata.key == MLX_KEY_A || keydata.key == MLX_KEY_LEFT)
-			&& keydata.action == MLX_PRESS)
+		&& keydata.action == MLX_PRESS)
 		move_left(game);
 }

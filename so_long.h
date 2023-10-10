@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 15:12:26 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 12:50:58 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ void		ft_load_png(void *param);
 void		ft_arr_texture(t_game_map* image);
 void		ft_texture_to_image(t_game_map *game);
 void		ft_player_moves(mlx_key_data_t keydata, void* param);
-void   		ft_refresh_img(t_game_map *game);
 
 //player move
 int			move_check(t_game_map *game, int x, int y);
