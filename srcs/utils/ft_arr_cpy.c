@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:54:25 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 15:33:02 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 11:27:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_arr_cpy(t_game_map *game)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	game->maze = (char **)malloc(game->height * sizeof(char *));
 	if (!game->maze)
 		return ;

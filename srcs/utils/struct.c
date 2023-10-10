@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:10:17 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 16:06:27 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 13:32:08 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_game_map	*create_game_map(char *file_path)
 {
-	t_game_map	*game;
+	t_game_map *game;
 
 	game = malloc(1 * sizeof(t_game_map));
 	if (!game)

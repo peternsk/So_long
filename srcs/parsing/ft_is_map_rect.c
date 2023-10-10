@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:49:00 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 15:59:56 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 11:25:57 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_is_map_rect(int width, t_game_map *game)
 {
-	int i = 0;
-	width = ft_strlen(game->map[i]) - 1;
+	int	i;
 
+	i = 0;
+	width = ft_strlen(game->map[i]) - 1;
 	while (i < game->height)
 	{
 		if (game->width == width)

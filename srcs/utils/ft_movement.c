@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:17:38 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/09 16:09:14 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 12:39:49 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	move_up(t_game_map *game)
 	}
 	if (game->map[game->player_x][game->player_y] == 'C')
 	{
+		game->map[game->player_x][game->player_y] = '0';
 		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], 64 * game->player_y
 			- 1, 64 * game->player_x);
 		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], 64
@@ -59,6 +60,7 @@ void	move_down(t_game_map *game)
 	}
 	if (game->map[game->player_x][game->player_y] == 'C')
 	{
+		game->map[game->player_x][game->player_y] = '0';
 		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], 64 * game->player_y
 			+ 1, 64 * game->player_x);
 		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], 64
@@ -80,6 +82,7 @@ void	move_left(t_game_map *game)
 	}
 	if (game->map[game->player_x][game->player_y] == 'C')
 	{
+		game->map[game->player_x][game->player_y] = '0';
 		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], 64
 			* game->player_y, 64 * game->player_x - 1);
 		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], 64
@@ -101,6 +104,7 @@ void	move_right(t_game_map *game)
 	}
 	if (game->map[game->player_x][game->player_y] == 'C')
 	{
+		game->map[game->player_x][game->player_y] = '0';
 		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], 64
 			* game->player_y, 64 * game->player_x + 1);
 		mlx_image_to_window(game->mlx, game->arr_img[PLAYER], 64

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arr_texture.c                                     :+:      :+:    :+:   */
+/*   ft_arr_texture.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:11:16 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/09/25 19:46:55 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/10 12:19:44 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,4 @@ void	ft_arr_texture(t_game_map *image)
 	image->arr_txtur[WAY_OUT_CLOSE] = (texture = mlx_load_png("./images/exit_1.png"));
 	image->arr_txtur[WAY_OUT_OPEN] = (texture = mlx_load_png("./images/exit_2.png"));
 }
+
