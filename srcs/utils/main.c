@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:29 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 13:32:03 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 13:36:58 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int	main(int argc, char **argv)
 {
-	mlx_image_t	*img;
-	t_game_map	*game;
-	//int	fd;
+	//mlx_image_t *img;
+	t_game_map *game;
 
 	(void)argc;
-	img = NULL;
+	//img = NULL;
 	game = create_game_map(argv[1]);
 	game->map = (char **)malloc(game->height * sizeof(char *));
 	if (!game->map)
