@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:35:37 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 11:13:25 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/11 15:30:18 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	ft_check_line_char(char *line, int indx, t_game_map *game)
 			game->width = indx;
 		}
 		else
-			ft_exiting_prog(1, "invalid character..error\n");
+			ft_ext_prg(game, 1, "invalid character..error\n");
 	}
 	if (game->player > 1 || game->way_out > 1)
-		ft_exiting_prog(1, "too many players or exits on the map\n");
+		ft_ext_prg(game, 1, "too many players or exits on the map\n");
 }

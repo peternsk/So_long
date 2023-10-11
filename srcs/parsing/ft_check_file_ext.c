@@ -6,13 +6,13 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:19:21 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 13:36:45 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/11 15:30:18 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	ft_check_file_ext(char *map_file, char *req_ext)
+void	ft_check_file_ext(t_game_map * game, char *map_file, char *req_ext)
 {
 	int	n;
 	int	i;
@@ -29,6 +29,6 @@ void	ft_check_file_ext(char *map_file, char *req_ext)
 			n++;
 		}
 		else
-			ft_exiting_prog(1, "wrong file extension...");
+			ft_ext_prg(game, 1, "wrong file extension...");
 	}
 }

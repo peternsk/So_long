@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:27:54 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 11:26:20 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/11 15:30:18 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_is_path_valid(t_game_map *game)
 	if ((game->collect != game->collect_flood)
 		|| (game->way_out != game->exit_flood))
 	{
-		ft_exiting_prog(1, "unreachebla char\n");
+		ft_ext_prg(game, 1, "unreachebla char\n");
 	}
 	else
 		printf("valid path\n");

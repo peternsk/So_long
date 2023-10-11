@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:31:09 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 12:43:42 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/11 13:23:46 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,8 @@ void	ft_texture_to_image(t_game_map *game)
 			game->arr_txtur[WAY_OUT_CLOSE]);
 	game->arr_img[WAY_OUT_OPEN] = mlx_texture_to_image(game->mlx,
 			game->arr_txtur[WAY_OUT_OPEN]);
+	if (!game->arr_img[WALL] || !game->arr_img[FLOOR] || !game->arr_img[COLLECT] || !game->arr_img[PLAYER] || !game->arr_img[WAY_OUT_CLOSE] || !game->arr_img[WAY_OUT_OPEN])
+	{
+		ft_free_f(game);
+	}
 }
