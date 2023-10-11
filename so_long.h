@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 18:26:14 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/11 11:56:17 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,11 @@ void		move_right(t_game_map *game);
 
 //assembled functions
 int			ft_init(t_game_map *game);
+
+// //free
+void		ft_free_2d_map(char **map);
+int			ft_free_s(t_game_map * game);
+void    	ft_free_f(t_game_map * game);
+
 
 #endif
