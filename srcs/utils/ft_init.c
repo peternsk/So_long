@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:25:31 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 12:33:01 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/10 23:24:12 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int	ft_init(t_game_map *game)
 	ft_load_png(game);
 	mlx_key_hook(game->mlx, &ft_player_moves, game);
 	mlx_loop(game->mlx);
+
+	//void mlx_resize_hook(mlx_t* mlx, mlx_resizefunc func, void* param);
+
 	mlx_delete_image(game->mlx, img);
 	mlx_terminate(game->mlx);
 	return (EXIT_SUCCESS);

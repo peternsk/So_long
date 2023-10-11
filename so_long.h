@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/10 18:25:12 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/10 18:26:14 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,5 @@ void		move_right(t_game_map *game);
 
 //assembled functions
 int			ft_init(t_game_map *game);
-
-//free
-void		ft_free(t_game_map *game);
 
 #endif
