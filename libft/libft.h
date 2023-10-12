@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:39:59 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/09/07 10:31:37 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/12 13:29:40 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,15 @@ char		*ft_str_attach_GNL(char *base_str, char *add_str);
 char		*ft_memmove_GNL(char *dst, char *src, size_t len);
 char		*ft_memcpy_GNL(char *dst, const char *src, size_t n);
 void    	ft_exiting_prog(int out, char *mess_out);
+
+//GNL_RENE
+char	*RENE_ft_strchr(const char *s, int c);
+char	*RENE_ft_strjoin(char *stash, char *buff);
+char	*RENE_ft_get_line(char *stash);
+char	*RENE_ft_clean_stash(char *stash);
+void	*RENE_ft_calloc(size_t count, size_t size);
+char	*RENE_get_next_line(int fd);
+
 
 
 #endif

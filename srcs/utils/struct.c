@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:10:17 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/11 16:50:57 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/12 16:55:22 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_game_map	*create_game_map(char *file_path)
 	game = malloc(1 * sizeof(t_game_map));
 	if (!game)
 		return (NULL);
-	printf("game address : %p\n", game);
 	game->map = 0;
 	game->collect = 0;
 	game->player = 0;
@@ -29,10 +28,10 @@ t_game_map	*create_game_map(char *file_path)
 	game->indx = 0;
 	game->player_x = 0;
 	game->player_y = 0;
-	game->player_x = 0;
-	game->player_y = 0;
+	game->ext_p_x = 0;
+	game->ext_p_y = 0;
 	game->maze = 0;
-	game->fill = '+';
+
 	game->collect_flood = 0;
 	game->exit_flood = 0;
 	game->maze_char = 0;

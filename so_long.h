@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/11 17:21:16 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/12 17:07:23 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include "MLX42/include/MLX42/MLX42.h"
 # include <fcntl.h>
 # include <string.h>
+#include <stdbool.h>
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -48,12 +49,12 @@ typedef struct s_game_map
 	int		height;
 	int		width;
 	int		indx;
-	//int		fd;
 	int		player_x;
 	int		player_y;
+	
 	int		ext_p_x;
 	int		ext_p_y;
-	char	fill;
+	
 	int		collect_flood;
 	int		exit_flood;
 	char	maze_char;
@@ -78,19 +79,22 @@ typedef struct s_game_map
 
 t_game_map		*create_game_map(char *file_path);
 
-void		ft_check_file_ext(t_game_map * game, char *map_file, char *req_ext);
-void		ft_check_line_char(char *line, int indx, t_game_map *game);
-void		ft_map_to_arr(t_game_map *game, char *file_path);
-void		ft_check_line_char(char *line, int indx, t_game_map *game);
+//parssing function
+bool		first_rnd_pars(t_game_map *game, char *arg);
+bool		ft_check_file_ext(char *map_file, char *req_ext);
+bool		ft_check_line_char(char *line, int indx, t_game_map *game);
+bool		ft_check_mando_char(t_game_map *game);
+bool		ft_is_map_close(t_game_map *game);
+bool		ft_is_map_rect(int width, t_game_map *game);
+bool		ft_is_path_valid(t_game_map *game);
+
+//utils
+bool		ft_map_to_arr(t_game_map *game, char *file_path);
 int			ft_count_line(char *file_path);
-void		ft_is_map_close(t_game_map *game);
-void		ft_is_map_rect(int width, t_game_map *game);
-void		ft_check_mando_char(t_game_map *game);
 void		ft_p_position(t_game_map *game);
 void		ft_ext_position(t_game_map *game);
 void		ft_arr_cpy(t_game_map *game);
 void    	ft_flood_fill(int x, int y, t_game_map *game);
-void		ft_is_path_valid(t_game_map *game);
 
 //mlx
 void		ft_load_png(void *param);
@@ -109,13 +113,11 @@ void		move_right(t_game_map *game);
 int			ft_init(t_game_map *game);
 
 // //free
-void		ft_free_game(t_game_map *game);
 void		ft_free_2d_map(char **map);
-int			ft_free_s(t_game_map * game);
-void    	ft_free_f(t_game_map * game);
+int			ft_free_f(t_game_map *game, char *error_msg);
 void		ft_delete_image(t_game_map * game);
 void		ft_delete_texture(t_game_map * game);
-void    	ft_ext_prg(t_game_map * game, int out, char *mess_out);
+void		ft_ext_prg(char *mess_out);
 
 
 #endif

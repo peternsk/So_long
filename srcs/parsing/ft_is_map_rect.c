@@ -6,13 +6,13 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:49:00 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/11 15:30:18 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/12 17:13:49 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	ft_is_map_rect(int width, t_game_map *game)
+bool	ft_is_map_rect(int width, t_game_map *game)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ void	ft_is_map_rect(int width, t_game_map *game)
 		if (game->width == width)
 			i++;
 		else
-			ft_ext_prg(game, 1, "map not rectangle\n");
+			return(false);
 	}
-	printf("map is rectangle\n");
+	return (true);
 }

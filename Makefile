@@ -9,9 +9,10 @@ INC_DIR = include
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-PARSING = ft_check_file_ext ft_check_line_char ft_check_mando_char ft_is_map_close ft_is_map_rect ft_is_path_valid
+PARSING = ft_check_file_ext ft_check_line_char ft_check_mando_char ft_is_map_close ft_is_map_rect ft_is_path_valid first_rnd_pars \
+
 UTILS = ft_arr_cpy ft_count_line ft_map_to_arr ft_p_position struct so_long ft_flood_fill ft_load_png ft_arr_texture \
-		ft_texture_to_image ft_player_moves ft_movement ft_init ft_ext_position ft_free ft_ext_prg
+		ft_texture_to_image ft_player_moves ft_movement ft_init ft_ext_position ft_free ft_ext_prg 
 
 SRCS = $(addsuffix .c, $(addprefix srcs/parsing/, $(PARSING))) \
 	  	$(addsuffix .c, $(addprefix srcs/utils/, $(UTILS)))

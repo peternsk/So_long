@@ -20,7 +20,7 @@ void	ft_flood_fill(int x, int y, t_game_map *game)
 		game->collect_flood++;
 	if (game->maze[x][y] == 'E')
 		game->exit_flood++;
-	game->maze[x][y] = game->fill;
+	game->maze[x][y] = '+';
 	ft_flood_fill(x, y + 1, game);
 	ft_flood_fill(x, y - 1, game);
 	ft_flood_fill(x + 1, y, game);

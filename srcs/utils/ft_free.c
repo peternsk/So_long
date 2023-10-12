@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:01:34 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/11 17:36:11 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/12 17:05:02 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,6 @@ void	ft_free_2d_map(char **map)
 		i++;
 	}
 	free(map);
-}
-
-void	ft_free_game(t_game_map *game)
-{
-	if (!game)
-		return ;
-	while (game)
-	{
-		if (game != NULL)
-			free(game);
-		game++;
-	}
-	free(game);
 }
 
 void	ft_delete_image(t_game_map *game)
@@ -62,10 +49,8 @@ void	ft_delete_texture(t_game_map *game)
 	}
 }
 
-int	ft_free_s(t_game_map *game)
+int	ft_free_f(t_game_map *game, char *error_msg)
 {
-	ft_free_2d_map(game->map);
-	ft_free_2d_map(game->maze);
 	if (game->mlx)
 	{
 		if (sizeof(game->arr_img) < 0)
@@ -74,29 +59,19 @@ int	ft_free_s(t_game_map *game)
 			ft_delete_texture(game);
 		mlx_close_window(game->mlx);
 		mlx_terminate(game->mlx);
+		free(game->mlx);
 	}
-	free(game);
-	free(game->mlx);
-	exit(EXIT_SUCCESS);
-	return (EXIT_SUCCESS);
-}
-
-void	ft_free_f(t_game_map *game)
-{
 	if (game->map)
-		free(game->map);
-	if (game->maze)
-		free(game->maze);
-	if (game->mlx)
-	{
-		if (sizeof(game->arr_img) < 0)
-			ft_delete_image(game);
-		if (sizeof(game->arr_txtur) < 0)
-			ft_delete_texture(game);
-		mlx_close_window(game->mlx);
-		mlx_terminate(game->mlx);
-	}
-	free(game->mlx);
+		ft_free_2d_map(game->map);
+	if (game->map)
+		ft_free_2d_map(game->maze);
 	free(game);
-	exit(EXIT_FAILURE);
+	if (error_msg == NULL)
+		exit(EXIT_SUCCESS);
+	else
+	{
+		ft_putendl_fd(error_msg, 2);
+		exit(EXIT_FAILURE);
+	}
+	return (0);
 }
