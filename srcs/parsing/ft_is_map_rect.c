@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:49:00 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 17:13:49 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 15:56:39 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	ft_is_map_rect(int width, t_game_map *game)
 		if (game->width == width)
 			i++;
 		else
-			return(false);
+			return (false);
 	}
 	return (true);
 }

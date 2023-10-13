@@ -6,14 +6,16 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:35:37 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 17:12:59 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:09:28 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-bool	ft_check_line_char(char *line, int indx, t_game_map *game)
+bool	ft_check_line_char(char *line, t_game_map *game)
 {
+	int	indx;
+
 	indx = 0;
 	while (line[indx] != '\0')
 	{
@@ -30,9 +32,9 @@ bool	ft_check_line_char(char *line, int indx, t_game_map *game)
 			game->width = indx;
 		}
 		else
-			return(false);
+			return (false);
 	}
 	if (game->player > 1 || game->way_out > 1)
-		return(false);
-	return(true);
+		return (false);
+	return (true);
 }

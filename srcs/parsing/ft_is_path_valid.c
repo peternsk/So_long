@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:27:54 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 17:14:51 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 15:56:50 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 bool	ft_is_path_valid(t_game_map *game)
 {
 	ft_flood_fill(game->player_x, game->player_y, game);
-	if ((game->collect != game->collect_flood)|| (game->way_out != game->exit_flood))
-		return(false);
-	return(true);
+	if ((game->collect != game->collect_flood)
+		|| (game->way_out != game->exit_flood))
+		return (false);
+	return (true);
 }

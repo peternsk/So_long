@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 09:58:27 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 15:25:24 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 16:05:03 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ bool	ft_map_to_arr(t_game_map *game, char *file_path)
 	while (++i < game->height)
 	{
 		game->map[i] = get_next_line(fd);
-		ft_check_line_char(game->map[i], game->indx, game);
+		ft_check_line_char(game->map[i], game);
 	}
 	game->map[i] = NULL;
 	close(fd);
-	return(true);
+	return (true);
 }

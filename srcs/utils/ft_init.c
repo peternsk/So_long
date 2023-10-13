@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:25:31 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 16:49:51 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 15:58:11 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ int	ft_init(t_game_map *game)
 	ft_load_png(game);
 	mlx_key_hook(game->mlx, &ft_player_moves, game);
 	mlx_loop(game->mlx);
-
 	return (EXIT_SUCCESS);
 }

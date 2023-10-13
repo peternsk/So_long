@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arr_cpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:54:25 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/13 00:25:04 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/13 15:57:26 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ bool	ft_arr_cpy(t_game_map *game)
 	i = 0;
 	game->maze = (char **)calloc(game->height + 1, sizeof(char *));
 	if (!game->maze)
-		return(false);
+		return (false);
 	while (i < game->height)
 	{
 		game->maze[i] = ft_strdup(game->map[i]);
 		i++;
 	}
 	game->maze[i] = NULL;
-	return(true);
+	return (true);
 }
