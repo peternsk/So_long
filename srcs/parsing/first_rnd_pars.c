@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   first_rnd_pars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:02:58 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/12 17:17:29 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 00:21:51 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 bool    first_rnd_pars(t_game_map *game, char *arg)
 {
-	
 	if(ft_check_file_ext(arg, ".ber") == false)
 		ft_free_f(game, "wrong file extention");
 	if(ft_map_to_arr(game, arg) == false)

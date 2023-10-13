@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 17:07:23 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 00:38:27 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ t_game_map		*create_game_map(char *file_path);
 
 //parssing function
 bool		first_rnd_pars(t_game_map *game, char *arg);
+bool		second_rnd_pars(t_game_map *game);
 bool		ft_check_file_ext(char *map_file, char *req_ext);
 bool		ft_check_line_char(char *line, int indx, t_game_map *game);
 bool		ft_check_mando_char(t_game_map *game);
@@ -93,7 +94,7 @@ bool		ft_map_to_arr(t_game_map *game, char *file_path);
 int			ft_count_line(char *file_path);
 void		ft_p_position(t_game_map *game);
 void		ft_ext_position(t_game_map *game);
-void		ft_arr_cpy(t_game_map *game);
+bool		ft_arr_cpy(t_game_map *game);
 void    	ft_flood_fill(int x, int y, t_game_map *game);
 
 //mlx

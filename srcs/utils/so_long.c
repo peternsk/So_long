@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:29 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 17:24:06 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/13 00:40:30 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,10 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		game = create_game_map(argv[1]);
-	
-		if(first_rnd_pars(game, argv[1]) != true)
+		if(first_rnd_pars(game, argv[1]) == false)
 			return(EXIT_FAILURE);
-		ft_p_position(game);
-		ft_ext_position(game);
-		ft_arr_cpy(game);
-		ft_is_path_valid(game);
-
+		if(second_rnd_pars(game) == false)
+			return(EXIT_FAILURE);
 		ft_init(game);
 	}
 	else
