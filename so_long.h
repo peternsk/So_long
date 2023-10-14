@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/13 00:38:27 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/13 23:53:09 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,17 @@ typedef struct s_game_map
 	int		way_out;
 	int		height;
 	int		width;
-	int		indx;
 	int		player_x;
 	int		player_y;
-	
 	int		ext_p_x;
 	int		ext_p_y;
-	
 	int		collect_flood;
 	int		exit_flood;
-	char	maze_char;
 	int		move_cnt;
-
-	int collect_maze;
-	int exit_maze;
-	int floor_maze;
-	int player_maze;
-	int wall;
-	int x_64;
-	int y_64;
+	int 	collect_maze;
+	int 	exit_maze;
+	int 	floor_maze;
+	int 	player_maze;
 	
 	mlx_texture_t *arr_txtur[NUM_OF_IMAGE];
 	mlx_image_t *arr_img[NUM_OF_IMAGE];
@@ -83,7 +75,7 @@ t_game_map		*create_game_map(char *file_path);
 bool		first_rnd_pars(t_game_map *game, char *arg);
 bool		second_rnd_pars(t_game_map *game);
 bool		ft_check_file_ext(char *map_file, char *req_ext);
-bool		ft_check_line_char(char *line, int indx, t_game_map *game);
+bool		ft_check_line_char(char *line, t_game_map *game);
 bool		ft_check_mando_char(t_game_map *game);
 bool		ft_is_map_close(t_game_map *game);
 bool		ft_is_map_rect(int width, t_game_map *game);
@@ -98,7 +90,7 @@ bool		ft_arr_cpy(t_game_map *game);
 void    	ft_flood_fill(int x, int y, t_game_map *game);
 
 //mlx
-void		ft_load_png(void *param);
+void		ft_load_png(t_game_map	*game, int i, int j, int x, int y);
 void		ft_arr_texture(t_game_map* image);
 void		ft_texture_to_image(t_game_map *game);
 void		ft_player_moves(mlx_key_data_t keydata, void* param);

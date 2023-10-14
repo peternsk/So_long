@@ -3,33 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_load_png.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 09:04:30 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/13 13:06:13 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/13 23:54:39 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	ft_load_png(void *param)
+void	ft_load_png(t_game_map	*game, int i, int j, int x, int y)
 {
-	t_game_map	*game;
-	int			i;
-	int			j;
-	int			x;
-	int			y;
 	int			p_x;
 	int			p_y;
 
-	game = param;
-	i = 0;
-	j = 0;
-	x = 0;
-	y = 0;
-	while (i < game->height)
+	i = -1;
+	j = -1;
+	while (++i < game->height)
 	{
-		while (j < game->width)
+		while (++j < game->width)
 		{
 			if (game->map[i][j] == '1')
 				mlx_image_to_window(game->mlx, game->arr_img[WALL], x, y);
@@ -46,10 +38,8 @@ void	ft_load_png(void *param)
 				p_y = y;
 			}
 			x = x + 64;
-			j++;
 		}
-		i++;
-		j = 0;
+		j = -1;
 		x = 0;
 		y = y + 64;
 	}
