@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   MLX42.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 02:29:06 by W2Wizard          #+#    #+#             */
-/*   Updated: 2023/09/29 07:24:47 by peternsaka       ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   MLX42.h                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: W2Wizard <main@w2wizard.dev>                 +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/28 02:29:06 by W2Wizard      #+#    #+#                 */
+/*   Updated: 2023/03/30 16:23:19 by ntamayo-      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -592,7 +592,7 @@ void mlx_get_window_pos(mlx_t* mlx, int32_t* xpos, int32_t* ypos);
 
 /**
  * Changes the window size to the newly specified values.
- * Use this to update the window width and heigth values in the mlx handle.
+ * Use this to update the window width and height values in the mlx handle.
  * 
  * @param[in] mlx The MLX instance handle.
  * @param[in] new_width The new desired width.
@@ -857,7 +857,7 @@ mlx_image_t* mlx_new_image(mlx_t* mlx, uint32_t width, uint32_t height);
  * NOT the pointer! It will become invalid!
  * 
  * WARNING: Try to display as few images on the window as possible,
- * drawing too many images will cause a loss in peformance!
+ * drawing too many images will cause a loss in performance!
  * 
  * @param[in] mlx The MLX instance handle.
  * @param[in] img The image to draw on the screen.
@@ -924,7 +924,6 @@ mlx_image_t* mlx_put_string(mlx_t* mlx, const char* str, int32_t x, int32_t y);
 const mlx_texture_t* mlx_get_font(void);
 
 /**
- * 
  * This function lets you retrieve the X offset 
  * of the given char in the font texture.
  * 

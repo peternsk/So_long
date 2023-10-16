@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:25:31 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/13 23:53:32 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 10:25:48 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 int	ft_init(t_game_map *game)
 {
-	int			i;
-	int			j;
-	int			x;
-	int			y;
+	t_load_pos	var;
 
-	i = 0;
-	j = 0;
-	x = 0;
-	y = 0;
+	var.i = 0;
+	var.j = 0;
+	var.x = 0;
+	var.y = 0;
 	game->mlx = mlx_init((game->width * 64), (game->height * 64), "SO_LONG",
 			true);
 	if (!game->mlx)
@@ -32,7 +29,7 @@ int	ft_init(t_game_map *game)
 	}
 	ft_arr_texture(game);
 	ft_texture_to_image(game);
-	ft_load_png(game, i, j, x, y);
+	ft_load_png(game, &var);
 	mlx_key_hook(game->mlx, &ft_player_moves, game);
 	mlx_loop(game->mlx);
 	return (EXIT_SUCCESS);

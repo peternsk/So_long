@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/13 23:53:09 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 09:51:27 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,15 @@ typedef enum mlx_images
 	WAY_OUT_CLOSE,
 	NUM_OF_IMAGE
 }	t_mlx_images;
+
+typedef struct s_load_pos
+{
+	int			i;
+	int			j;
+	int			x;
+	int			y;
+} t_load_pos;
+
 
 typedef struct s_game_map
 {
@@ -90,7 +99,8 @@ bool		ft_arr_cpy(t_game_map *game);
 void    	ft_flood_fill(int x, int y, t_game_map *game);
 
 //mlx
-void		ft_load_png(t_game_map	*game, int i, int j, int x, int y);
+void		ft_load_png(t_game_map	*game, t_load_pos *var);
+void		ft_load_png_utlis(t_game_map	*game, t_load_pos *var);
 void		ft_arr_texture(t_game_map* image);
 void		ft_texture_to_image(t_game_map *game);
 void		ft_player_moves(mlx_key_data_t keydata, void* param);

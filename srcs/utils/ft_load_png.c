@@ -6,42 +6,49 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 09:04:30 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/13 23:54:39 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 10:25:08 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	ft_load_png(t_game_map	*game, int i, int j, int x, int y)
+void	ft_load_png_utlis(t_game_map *game, t_load_pos *var)
 {
-	int			p_x;
-	int			p_y;
+	if (game->map[var->i][var->j] == '1')
+		mlx_image_to_window(game->mlx, game->arr_img[WALL], var->x, var->y);
+	else if (game->map[var->i][var->j] == '0')
+		mlx_image_to_window(game->mlx, game->arr_img[FLOOR], var->x, var->y);
+	else if (game->map[var->i][var->j] == 'C')
+		mlx_image_to_window(game->mlx, game->arr_img[COLLECT], var->x, var->y);
+	else if (game->map[var->i][var->j] == 'E')
+		mlx_image_to_window(game->mlx, game->arr_img[WAY_OUT_CLOSE], var->x,
+			var->y);
+}
 
-	i = -1;
-	j = -1;
-	while (++i < game->height)
+void	ft_load_png(t_game_map *game, t_load_pos *var)
+{
+	int	p_x;
+	int	p_y;
+
+	var->i = -1;
+	var->j = -1;
+	while (++var->i < game->height)
 	{
-		while (++j < game->width)
+		while (++var->j < game->width)
 		{
-			if (game->map[i][j] == '1')
-				mlx_image_to_window(game->mlx, game->arr_img[WALL], x, y);
-			else if (game->map[i][j] == '0')
-				mlx_image_to_window(game->mlx, game->arr_img[FLOOR], x, y);
-			else if (game->map[i][j] == 'C')
-				mlx_image_to_window(game->mlx, game->arr_img[COLLECT], x, y);
-			else if (game->map[i][j] == 'E')
-				mlx_image_to_window(game->mlx, game->arr_img[WAY_OUT_CLOSE], x,y);
-			else if (game->map[i][j] == 'P')
+			ft_load_png_utlis(game, var);
+			if (game->map[var->i][var->j] == 'P')
 			{
-				mlx_image_to_window(game->mlx, game->arr_img[FLOOR], x, y);
-				p_x = x;
-				p_y = y;
+				mlx_image_to_window(game->mlx, game->arr_img[FLOOR], var->x,
+					var->y);
+				p_x = var->x;
+				p_y = var->y;
 			}
-			x = x + 64;
+			var->x = var->x + 64;
 		}
-		j = -1;
-		x = 0;
-		y = y + 64;
+		var->j = -1;
+		var->x = 0;
+		var->y = var->y + 64;
 	}
 	mlx_image_to_window(game->mlx, game->arr_img[PLAYER], p_x, p_y);
 }
