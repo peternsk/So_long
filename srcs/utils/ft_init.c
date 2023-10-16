@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:25:31 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/16 10:25:48 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 17:12:35 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_init(t_game_map *game)
 	var.x = 0;
 	var.y = 0;
 	game->mlx = mlx_init((game->width * 64), (game->height * 64), "SO_LONG",
-			true);
+			false);
 	if (!game->mlx)
 	{
 		puts(mlx_strerror(mlx_errno));

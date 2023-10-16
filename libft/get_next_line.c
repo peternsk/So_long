@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:46:40 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/08/30 15:34:57 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/16 13:04:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ char	*get_next_line(int fd)
 	while (read_char > 0)
 	{
 		buffer[read_char] = '\0';
-		str_stat = ft_str_attach_GNL(str_stat, buffer);
-		if (ft_chr_bakn_GNL(buffer, '\n') == 1)
+		str_stat = ft_str_attach_gnl(str_stat, buffer);
+		if (ft_chr_bakn_gnl(buffer, '\n') == 1)
 			break ;
 		read_char = read(fd, buffer, BUFFER_SIZE);
 	}
-	if ((read_char == -1) || (read_char <= 0 && ft_strlen_GNL(str_stat) == 0))
+	if ((read_char == -1) || (read_char <= 0 && ft_strlen_gnl(str_stat) == 0))
 	{
 		if (str_stat)
 		{
@@ -36,5 +36,5 @@ char	*get_next_line(int fd)
 		}
 		return (NULL);
 	}
-	return (ft_new_line_GNL(str_stat));
+	return (ft_new_line_gnl(str_stat));
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_attach_GNL.c                                   :+:      :+:    :+:   */
+/*   ft_str_attach_GNL.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:37:00 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/08/29 12:52:05 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/16 13:05:12 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_str_attach_GNL(char *base_str, char *add_str)
+char	*ft_str_attach_gnl(char *base_str, char *add_str)
 {
 	char	*new_str;
 	int		len;
 
-	len = (ft_strlen_GNL(base_str) + ft_strlen_GNL(add_str));
+	len = (ft_strlen_gnl(base_str) + ft_strlen_gnl(add_str));
 	new_str = (char *)malloc(len * sizeof(char) + 1);
 	if (!new_str)
 		return (0);

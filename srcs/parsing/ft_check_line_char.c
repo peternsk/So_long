@@ -6,33 +6,38 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:35:37 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/13 16:09:28 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 17:13:22 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-bool	ft_check_line_char(char *line, t_game_map *game)
+bool	ft_check_line_char(t_game_map *game)
 {
-	int	indx;
+	int	i;
+	int	j;
 
-	indx = 0;
-	while (line[indx] != '\0')
+	i = 0;
+    while (game->map[i] != NULL)
 	{
-		if (line[indx] == '0' || line[indx] == '1' || line[indx] == 'C'
-			|| line[indx] == 'E' || line[indx] == 'P' || line[indx] == '\n')
+		j = 0;
+		while (game->map[i][j])
 		{
-			if (line[indx] == 'C')
-				game->collect++;
-			if (line[indx] == 'P')
-				game->player++;
-			if (line[indx] == 'E')
-				game->way_out++;
-			indx++;
-			game->width = indx;
+			if (game->map[i][j] == '0' || game->map[i][j] == '1' || game->map[i][j] == 'C'|| game->map[i][j] == 'E' || game->map[i][j] == 'P' || game->map[i][j] == '\n')
+			{
+				if (game->map[i][j] == 'C')
+					game->collect++;
+				if (game->map[i][j] == 'P')
+					game->player++;
+				if (game->map[i][j] == 'E')
+					game->way_out++;
+				j++;
+				game->width = j;
+			}
+			else
+				return (false);
 		}
-		else
-			return (false);
+		i++;
 	}
 	if (game->player > 1 || game->way_out > 1)
 		return (false);

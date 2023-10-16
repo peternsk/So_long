@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chr_bakn_GNL.c                                     :+:      :+:    :+:   */
+/*   ft_chr_bakn_GNL.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:35:22 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/08/29 12:50:50 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/16 13:06:12 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_chr_bakn_GNL(char *str, char c)
+size_t	ft_chr_bakn_gnl(char *str, char c)
 {
 	int	i;
 

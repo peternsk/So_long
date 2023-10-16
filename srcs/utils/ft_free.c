@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:01:34 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/10/12 17:05:02 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 14:45:16 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_free_f(t_game_map *game, char *error_msg)
 	}
 	if (game->map)
 		ft_free_2d_map(game->map);
-	if (game->map)
+	if (game->maze)
 		ft_free_2d_map(game->maze);
 	free(game);
 	if (error_msg == NULL)

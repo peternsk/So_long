@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen_GNL.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:32:58 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/08/29 12:51:22 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/16 13:04:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen_GNL(char *s)
+int	ft_strlen_gnl(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (!s)
+	if (!str)
 	{
 		return (0);
 	}
-	while (s[i])
+	while (str[i])
 	{
 		i++;
 	}

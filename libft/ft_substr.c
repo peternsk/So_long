@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 10:07:28 by peternsaka        #+#    #+#             */
-/*   Updated: 2022/11/30 12:21:20 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 13:01:26 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (start < ft_strlen(s))
 		while (i < len && s[start + i])
-				i++;
+			i++;
 	sub_str = (char *)malloc((i + 1) * sizeof(*s));
 	if (!sub_str)
 		return (sub_str);

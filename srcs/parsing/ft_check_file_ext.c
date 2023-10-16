@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:19:21 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/12 17:07:07 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 13:10:53 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	ft_check_file_ext(char *map_file, char *req_ext)
 			n++;
 		}
 		else
-			ft_ext_prg("wrong file extension...");
+			return (false);
 	}
 	return (true);
 }
