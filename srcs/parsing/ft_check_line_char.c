@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_line_char.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:35:37 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/16 17:13:22 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/16 23:31:27 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ bool	ft_check_line_char(t_game_map *game)
 	int	j;
 
 	i = 0;
+	// if(ft_strlen(game->map[i]) == 0)
+	// 	return(false);
     while (game->map[i] != NULL)
 	{
 		j = 0;
