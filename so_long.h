@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/16 15:33:30 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/18 19:51:00 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ bool				ft_check_mando_char(t_game_map *game);
 bool				ft_is_map_close(t_game_map *game);
 bool				ft_is_map_rect(int width, t_game_map *game);
 bool				ft_is_path_valid(t_game_map *game);
+bool				ft_map_limits(t_game_map *game);
 
 //utils
 bool				ft_map_to_arr(t_game_map *game, char *file_path, int fd);
