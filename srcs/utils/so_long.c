@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:29 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/17 07:38:43 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/20 10:06:18 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 int	main(int argc, char **argv)
 {
 	t_game_map	*game;
+	int			fd;
 
 	if (argc == 2)
 	{
-		int	fd;
-		
 		fd = open(argv[1], O_RDONLY);
 		if (fd == -1)
 			return (EXIT_FAILURE);

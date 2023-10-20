@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:21:42 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/16 15:33:30 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:50:43 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,13 @@ t_game_map			*create_game_map(char *file_path);
 bool				first_rnd_pars(t_game_map *game, char *arg, int fd);
 bool				second_rnd_pars(t_game_map *game);
 bool				ft_check_file_ext(char *map_file, char *req_ext);
-bool				ft_check_line_char(t_game_map *game);
+bool				ft_check_line_char(t_game_map *game, t_load_pos var);
+void				ft_check_line_char_utils(t_game_map *game, t_load_pos var);
 bool				ft_check_mando_char(t_game_map *game);
 bool				ft_is_map_close(t_game_map *game);
 bool				ft_is_map_rect(int width, t_game_map *game);
 bool				ft_is_path_valid(t_game_map *game);
+bool				ft_map_limits(t_game_map *game);
 
 //utils
 bool				ft_map_to_arr(t_game_map *game, char *file_path, int fd);

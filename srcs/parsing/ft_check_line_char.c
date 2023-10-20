@@ -3,45 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_line_char.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:35:37 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/16 23:31:27 by peternsaka       ###   ########.fr       */
+/*   Updated: 2023/10/20 11:00:07 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-bool	ft_check_line_char(t_game_map *game)
+void	ft_check_line_char_utils(t_game_map *game, t_load_pos var)
 {
-	int	i;
-	int	j;
+	if (game->map[var.i][var.j] == 'C')
+		game->collect++;
+	if (game->map[var.i][var.j] == 'P')
+		game->player++;
+	if (game->map[var.i][var.j] == 'E')
+		game->way_out++;
+	game->width = var.j + 1;
+}
 
-	i = 0;
-	// if(ft_strlen(game->map[i]) == 0)
-	// 	return(false);
-    while (game->map[i] != NULL)
+bool	ft_check_line_char(t_game_map *game, t_load_pos var)
+{
+	var.i = -1;
+	while (game->map[++var.i] != NULL)
 	{
-		j = 0;
-		while (game->map[i][j])
+		var.j = -1;
+		while (game->map[var.i][++var.j])
 		{
-			if (game->map[i][j] == '0' || game->map[i][j] == '1' || game->map[i][j] == 'C'|| game->map[i][j] == 'E' || game->map[i][j] == 'P' || game->map[i][j] == '\n')
+			if (game->map[var.i][var.j] == '0' || game->map[var.i][var.j] == '1'
+				|| game->map[var.i][var.j] == 'C'
+				|| game->map[var.i][var.j] == 'E'
+				|| game->map[var.i][var.j] == 'P'
+				|| game->map[var.i][var.j] == '\n')
 			{
-				if (game->map[i][j] == 'C')
-					game->collect++;
-				if (game->map[i][j] == 'P')
-					game->player++;
-				if (game->map[i][j] == 'E')
-					game->way_out++;
-				j++;
-				game->width = j;
+				ft_check_line_char_utils(game, var);
 			}
 			else
 				return (false);
 		}
-		i++;
 	}
-	if (game->player > 1 || game->way_out > 1)
-		return (false);
 	return (true);
 }

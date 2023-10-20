@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_to_arr.c                                    :+:      :+:    :+:   */
+/*   ft_map_limits.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 09:58:27 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/20 10:06:50 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/10/18 15:51:45 by peternsaka        #+#    #+#             */
+/*   Updated: 2023/10/20 10:26:54 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-bool	ft_map_to_arr(t_game_map *game, char *file_path, int fd)
+bool	ft_map_limits(t_game_map *game)
 {
-	int	i;
-
-	i = -1;
-	(void)file_path;
-	game->map = (char **)ft_calloc(game->height + 1, sizeof(char *));
-	if (!game->map)
+	if (game->height > 21 || game->width > 41)
 		return (false);
-	while (++i < game->height)
-	{
-		game->map[i] = get_next_line(fd);
-		if (ft_strlen(game->map[0]) == 0)
-			ft_free_f(game, "empty file");
-	}
-	game->map[i] = NULL;
+	if (game->player > 1 || game->way_out > 1)
+		return (false);
 	return (true);
 }
