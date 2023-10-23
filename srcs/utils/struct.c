@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:10:17 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/16 10:23:56 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/23 17:20:30 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ t_game_map	*create_game_map(char *file_path)
 	game->exit_maze = 0;
 	game->floor_maze = 0;
 	game->player_maze = 0;
+	game->mlx = NULL;
 	return (game);
 }

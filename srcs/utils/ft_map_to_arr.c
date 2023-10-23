@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 09:58:27 by peternsaka        #+#    #+#             */
-/*   Updated: 2023/10/20 10:06:50 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/10/23 17:38:51 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ bool	ft_map_to_arr(t_game_map *game, char *file_path, int fd)
 			ft_free_f(game, "empty file");
 	}
 	game->map[i] = NULL;
+	if (ft_strlen(game->map[i - 1]) <= 1)
+	{
+		return (false);
+	}
 	return (true);
 }

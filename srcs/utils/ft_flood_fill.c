@@ -14,12 +14,15 @@
 
 void	ft_flood_fill(int x, int y, t_game_map *game)
 {
-	if (game->maze[x][y] == '1' || game->maze[x][y] == '+')
-		return ;
 	if (game->maze[x][y] == 'C')
 		game->collect_flood++;
 	if (game->maze[x][y] == 'E')
+	{
+		game->maze[x][y] = '1';
 		game->exit_flood++;
+	}
+	if (game->maze[x][y] == '1' || game->maze[x][y] == '+')
+		return ;
 	game->maze[x][y] = '+';
 	ft_flood_fill(x, y + 1, game);
 	ft_flood_fill(x, y - 1, game);

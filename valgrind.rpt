@@ -1,0 +1,63 @@
+==18161== Memcheck, a memory error detector
+==18161== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==18161== Using Valgrind-3.21.0.GIT-lbmacos and LibVEX; rerun with -h for copyright info
+==18161== Command: ./so_long
+==18161== Parent PID: 18092
+==18161== 
+--18161-- UNKNOWN task message [id 3453, to mach_task_self(), reply 0x707]
+==18161== Warning: set address range perms: large range [0xffffffff000, 0x120000000000) (defined)
+==18161== Warning: set address range perms: large range [0x140000000000, 0x200000000000) (defined)
+==18161== Warning: set address range perms: large range [0x120000000000, 0x140000000000) (noaccess)
+==18161== Warning: set address range perms: large range [0x600000000000, 0x640000003000) (noaccess)
+==18161== Invalid read of size 1
+==18161==    at 0x1002CBB98: __asan::asan_malloc_usable_size(void const*, unsigned long, unsigned long) (in /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib)
+==18161==    by 0x10030E32A: __asan_unpoison_stack_memory (in /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib)
+==18161==    by 0x1076BF663: _NXMapRehash(_NXMapTable*) (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076BF57C: NXMapInsert (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076BF23D: _mapStrHash(_NXMapTable*, void const*) (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076BEFFC: _getObjc2ProtocolList(header_info const*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076BD96E: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076CE2D0: unmap_image (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x100051667: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==18161==    by 0x100051808: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==18161==    by 0x108E3EAD0: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==18161==    by 0x1076BCDAF: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==18161==  Address 0x112e001a0 is 16 bytes before a block of size 24 alloc'd
+==18161==    at 0x100160D61: malloc_zone_calloc (in /Users/pnsaka/.brew/Cellar/valgrind/HEAD-ee485f9/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==18161==    by 0x1076BF541: NXMapInsert (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076BF23D: _mapStrHash(_NXMapTable*, void const*) (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076BEFFC: _getObjc2ProtocolList(header_info const*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076BD96E: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x1076CE2D0: unmap_image (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x100051667: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==18161==    by 0x100051808: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==18161==    by 0x108E3EAD0: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==18161==    by 0x1076BCDAF: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x108DC0F38: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==18161==    by 0x108DCD0E7: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==18161== 
+==18161== Warning: invalid file descriptor -1 in syscall close()
+==18161== Warning: invalid file descriptor -1 in syscall close()
+==18161== Warning: invalid file descriptor -1 in syscall close()
+==18161== Warning: invalid file descriptor -1 in syscall close()
+==18161== Warning: invalid file descriptor -1 in syscall close()
+==18161== Invalid read of size 4
+==18161==    at 0x1076CFF3C: lockAndFinishInitializing(objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==18161==    by 0x108DC0FEC: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==18161==    by 0x1092007D7: xpc_dictionary_create (in /usr/lib/system/libxpc.dylib)
+==18161==    by 0x109206E2A: _bootstrap_create_request (in /usr/lib/system/libxpc.dylib)
+==18161==    by 0x109206C7B: bootstrap_look_up3 (in /usr/lib/system/libxpc.dylib)
+==18161==    by 0x109206B19: bootstrap_look_up2 (in /usr/lib/system/libxpc.dylib)
+==18161==    by 0x10911C301: _notify_fork_child (in /usr/lib/system/libsystem_notify.dylib)
+==18161==    by 0x108DC1657: _dispatch_client_callout (in /usr/lib/system/libdispatch.dylib)
+==18161==    by 0x108DC27DD: _dispatch_once_callout (in /usr/lib/system/libdispatch.dylib)
+==18161==    by 0x10911C29D: _notify_fork_child (in /usr/lib/system/libsystem_notify.dylib)
+==18161==    by 0x10911A597: notify_monitor_file (in /usr/lib/system/libsystem_notify.dylib)
+==18161==    by 0x1091177E5: notify_register_check (in /usr/lib/system/libsystem_notify.dylib)
+==18161==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==18161== 
+==18161== 
+==18161== HEAP SUMMARY:
+==18161==     in use at exit: 208 bytes in 7 blocks
+==18161==   total heap usage: 7 allocs, 0 frees, 208 bytes allocated
+==18161== 
